@@ -1,5 +1,10 @@
 #LibIdn FFI ruby binding
 
+```
+sudo apt-get install libidn11
+```
+
+Gemfile:
 ```ruby
 gem 'idn_ffi'
 ```

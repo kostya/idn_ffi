@@ -21,7 +21,7 @@ private
       return unless str
       pointer = FFI::MemoryPointer.new :pointer
       int = IDNFFI::Lib.send(method, str, pointer, flags)
-      raise IDNFFI::Error, "bad answer from libidn #{ind}, http://www.gnu.org/software/libidn/reference/libidn-idna.html#IDNA-SUCCESS:CAPS" if int != 0
+      raise IDNFFI::Error, "bad answer from libidn #{int}, http://www.gnu.org/software/libidn/reference/libidn-idna.html#IDNA-SUCCESS:CAPS" if int != 0
       strptr = pointer.read_pointer()
       result = strptr.read_string()
       pointer.free
@@ -33,7 +33,7 @@ private
       return unless str
       pointer = FFI::MemoryPointer.new :pointer
       int = IDNFFI::Lib.send(method, str, pointer, flags)
-      raise IDNFFI::Error, "bad answer from libidn #{ind}, http://www.gnu.org/software/libidn/reference/libidn-idna.html#IDNA-SUCCESS:CAPS" if int != 0
+      raise IDNFFI::Error, "bad answer from libidn #{int}, http://www.gnu.org/software/libidn/reference/libidn-idna.html#IDNA-SUCCESS:CAPS" if int != 0
       strptr = pointer.read_pointer()
       result = strptr.read_string()
       pointer.free

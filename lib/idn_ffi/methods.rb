@@ -1,14 +1,10 @@
 module IDNFFI::Methods
 
-  # flags 
-  IDNA_ALLOW_UNASSIGNED = 0x0001      # Don't reject strings containing unassigned Unicode code points.
-  IDNA_USE_STD3_ASCII_RULES = 0x0002  # Validate strings according to STD3 rules (i.e., normal host name rules).
-
-  def to_ascii(str, flags = IDNA_ALLOW_UNASSIGNED)
+  def to_ascii(str, flags = IDNFFI::IDNA_ALLOW_UNASSIGNED)
     transform(:idna_to_ascii_8z, str, flags)
   end
   
-  def to_unicode(str, flags = IDNA_ALLOW_UNASSIGNED)
+  def to_unicode(str, flags = IDNFFI::IDNA_ALLOW_UNASSIGNED)
     transform(:idna_to_unicode_8z8z, str, flags)
   end
   
